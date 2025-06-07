@@ -1,7 +1,7 @@
 # Extraction of Atypical Aspects from Customer Reviews
 
 <p align="center">
-  <img src="ATARS/figs/pipeline.png" height="400">
+  <img src="pipeline1.png" height="400">
 </p>
 
 Extraction in 2 main steps:
