@@ -10,6 +10,6 @@ Extraction is done in 2 main steps:
     - Step 2.1: Classify each aspect sentence as positive if it mentions an atypical aspect, otherwise classify it as negative.
     - Step 2.2: Extract all atypical aspects from each of the sentences classified as positive.
 
-Code for the LLM-based approach (GPT) for Step 1 can be found at `./atypical_aspect_extraction/review_processing_to_aspect_sentences.ipynb`.
+Code for the LLM-based approach (GPT) for Step 1 can be found at `./review_processing_to_aspect_sentences.ipynb`.
  
-Code for the LLM-based approach (GPT) for Step 2 can be found at `./atypical_aspect_extraction/extraction_atypical_aspect_pipeline_ZS_FS_RAG.ipynb`.
+Code for the LLM-based approach (GPT) for Step 2 can be found at `./extraction_atypical_aspect_pipeline_ZS_FS_RAG.ipynb`.
