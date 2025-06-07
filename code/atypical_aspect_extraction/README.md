@@ -1,7 +1,7 @@
 # Extraction of Atypical Aspects from Customer Reviews
 
 <p align="center">
-  <img src="pipeline1.png" height="200">
+  <img src="pipeline1.png" height="100">
 </p>
 
 Extraction in 2 main steps:
