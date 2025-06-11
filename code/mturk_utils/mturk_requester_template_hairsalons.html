@@ -1,0 +1,1140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+    span.Apple-tab-span {white-space:pre}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;script src="https://assets.crowd.aws/crowd-html-elements.js"&gt;&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>function toggleAspect(direction, maxAspects) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>for (let i = 1; i &lt;= maxAspects; i++) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>let aspect = document.getElementById("aspect" + i);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (aspect) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>aspect.style.display = "none";</p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.getElementById("utility" + i).style.display = "none";</p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.getElementById("explanationInput" + i).style.display = "none";</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>let currentAspect = parseInt(document.getElementById("currentAspect").value);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (direction === 'next' &amp;&amp; currentAspect &lt; maxAspects) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>currentAspect++;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>} else if (direction === 'prev' &amp;&amp; currentAspect &gt; 1) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>currentAspect--;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>let aspect = document.getElementById("aspect" + currentAspect);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (aspect) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>aspect.style.display = "block";</p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById("utility" + currentAspect).style.display = "block";</p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById("explanationInput" + currentAspect).style.display = "block";</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById("currentAspect").value = currentAspect;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById("prevButton").disabled = currentAspect === 1;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById("nextButton").disabled = currentAspect === maxAspects;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>checkSubmitButtonState(currentAspect, maxAspects);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>function initializePage() {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const profileAspects = [];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Initialize reviews up to review12</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const review1 = `${review1}`.trim();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const review2 = `${review2}`.trim();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const review3 = `${review3}`.trim();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const review4 = `${review4}`.trim();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const review5 = `${review5}`.trim();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const review6 = `${review6}`.trim();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const review7 = `${review7}`.trim();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const review8 = `${review8}`.trim();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const review9 = `${review9}`.trim();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const review10 = `${review10}`.trim();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const review11 = `${review11}`.trim();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const review12 = `${review12}`.trim();</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (review1 !== '') profileAspects.push(review1);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (review2 !== '') profileAspects.push(review2);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (review3 !== '') profileAspects.push(review3);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (review4 !== '') profileAspects.push(review4);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (review5 !== '') profileAspects.push(review5);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (review6 !== '') profileAspects.push(review6);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (review7 !== '') profileAspects.push(review7);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (review8 !== '') profileAspects.push(review8);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (review9 !== '') profileAspects.push(review9);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (review10 !== '') profileAspects.push(review10);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (review11 !== '') profileAspects.push(review11);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (review12 !== '') profileAspects.push(review12);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>const maxAspects = profileAspects.length;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById("maxAspects").value = maxAspects;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById("currentAspect").value = 1;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>toggleAspect('stay', maxAspects);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>checkSubmitButtonState(1, maxAspects);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>function checkSubmitButtonState(currentAspect, maxAspects) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const submitButton = document.getElementById("customSubmitButton");</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (submitButton) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>submitButton.disabled = currentAspect !== maxAspects;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>// Remove the document.addEventListener('submit', ...) function</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>// Ensure the DOM is fully loaded before attaching event listeners</p>
+<p class="p1"><span class="Apple-converted-space">  </span>window.onload = function() {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>initializePage();</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Custom Submit button handling with validation logic</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById("customSubmitButton").addEventListener("submit", function(event) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const maxAspects = parseInt(document.getElementById('maxAspects').value);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const currentAspect = parseInt(document.getElementById('currentAspect').value);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (currentAspect !== maxAspects) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>alert('Please complete all aspects before submitting.')</p>
+<p class="p1"><span class="Apple-converted-space">        </span>event.preventDefault();// Prevent form submission</p>
+<p class="p1"><span class="Apple-converted-space">        </span>//return;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>} //else {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>//document.querySelector("crowd-form").submit();<span class="Apple-converted-space">  </span>// Simulates form submission</p>
+<p class="p1"><span class="Apple-converted-space">      </span>//}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>});</p>
+<p class="p1"><span class="Apple-converted-space">  </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>function showInstructions() {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById('instructionsModal').style.display = 'block';</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.querySelector(".instructions-heading").style.fontWeight = 'bold';</p>
+<p class="p1"><span class="Apple-converted-space">    </span>showTab('summary');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>function closeInstructions() {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById('instructionsModal').style.display = 'none';</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>function showTab(tabId) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const tabs = document.querySelectorAll(".tab-content");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>tabs.forEach(tab =&gt; tab.style.display = 'none');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById(tabId).style.display = 'block';</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>const tabButtons = document.querySelectorAll(".tab-button");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>tabButtons.forEach(button =&gt; button.classList.remove('active'));</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.querySelector(`.tab-button[data-tab="${tabId}"]`).classList.add('active');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1">&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.navigation-buttons {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>text-align: left;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin-top: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>#instructionsModal {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>display: none;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>position: fixed;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>left: 50%;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>top: 50%;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>transform: translate(-50%, -50%);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>width: 1000px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>max-height: 80vh;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background-color: white;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>z-index: 1000;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>overflow-y: auto;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>.instructions-heading {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size: 22px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin-bottom: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>.tab-header {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-bottom: 1px solid #ccc;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin-bottom: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>.tab-button {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>flex-grow: 1;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background-color: transparent;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-weight: normal;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>color: #333;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>transition: color 0.3s ease, border-bottom 0.3s ease;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>.tab-button:hover {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>color: black;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>.tab-button.active {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>color: orange;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-bottom: 2px solid orange;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>.modal-content {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>display: none;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>position: fixed;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>left: 50%;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>top: 50%;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>transform: translate(-50%, -50%);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>width: 500px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>max-height: 80vh;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background-color: white;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>z-index: 1000;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>overflow-y: auto;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>.tab-content {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>display: none;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin-top: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>max-height: 60vh;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>overflow-y: auto;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>.tab-content.active {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>display: block;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>.close-button {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>right: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>top: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background: none;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>color: black;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>.modal-overlay {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>position: fixed;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>top: 0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>left: 0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>height: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background: rgba(0, 0, 0, 0.5);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>z-index: 999;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>display: none;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>.explanationInput p {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin-bottom: 0.5px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>crowd-text-area {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding-top: 0.5px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding-bottom: 0.5px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>/* Hide the default submit button */</p>
+<p class="p1"><span class="Apple-converted-space">  </span>crowd-button[type="submit"] {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>display: none;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>/* Custom submit button styling */</p>
+<p class="p1"><span class="Apple-converted-space">  </span>#customSubmitButton {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>float: right;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin-top: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background-color: #f29400; /* Bright orange background */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>color: #000000; /* Black text color */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding: 10px 20px; /* Adjust padding for better spacing */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size: 16px; /* Adjust font size */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-weight: bold; /* Make the text bold */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-radius: 0px; /* Slightly rounded corners */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>box-shadow: none; /* Remove any default box shadow */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>transition: background-color 0.3s ease; /* Smooth hover transition */</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>#customSubmitButton:hover {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background-color: #f57c00; /* Darker orange on hover */</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1">&lt;/style&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- Instructions Modal --&gt;</p>
+<p class="p1">&lt;div id="instructionsModal"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;h2 class="instructions-heading"&gt;Instructions&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Cross button for closing the modal --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;button class="close-button" onclick="closeInstructions()"&gt;×&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="tab-header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button class="tab-button active" data-tab="summary" onclick="showTab('summary')"&gt;Summary&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button class="tab-button" data-tab="detailed" onclick="showTab('detailed')"&gt;Detailed Instructions&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button class="tab-button" data-tab="examples" onclick="showTab('examples')"&gt;Examples&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="summary" class="tab-content active"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h3&gt;Summary&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p style="color: blue;"&gt;&lt;strong&gt;Please read the instructions and examples carefully.&lt;/strong&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;You will be given a &lt;strong&gt;User Profile&lt;/strong&gt; and a &lt;strong&gt;Review&lt;/strong&gt; for a hair salon. First, read the profile to identify objects or<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>activities that the user finds interesting, appealing, or useful, henceforth referred to as &lt;em&gt;attractors&lt;/em&gt;. Next, read the review, in which one<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;span style="background-color: #FFD700;font-style: italic;"&gt;atypical aspect&lt;/span&gt; is highlighted. Considering the attractors from the profile, your task is to determine<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>the atypical aspect’s utility to the user as one of &lt;strong&gt;'None'&lt;/strong&gt;, &lt;strong&gt;'Low'&lt;/strong&gt;, &lt;strong&gt;'Medium'&lt;/strong&gt;, or &lt;strong&gt;'High'&lt;/strong&gt;:</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;&lt;strong&gt;None&lt;/strong&gt; is assigned to an atypical aspect in any of the cases below:</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;li&gt;The atypical aspect lacks any relevance to the attractors in the user profile.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;li&gt;The atypical aspect, despite appearing relevant, is too specific for the user’s very broad interests or hobbies in the profile. For</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>example, &lt;span style="background-color: #FFD700;font-style: italic;"&gt;live music&lt;/span&gt; vs. &lt;span style="background-color: #ADFF2F;font-style: italic;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>creating a playful and family-friendly environment&lt;/span&gt;.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;li&gt;The atypical aspect involves materials or items that, despite appearing relevant, belong to a completely different context or are<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                  </span>used for a completely different purpose than those in the user profile. For example, &lt;span style="background-color: #FFD700;font-style:<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                  </span>italic;"&gt;plastic ponchos&lt;/span&gt; vs. &lt;span style="background-color: #ADFF2F;font-style: italic;"&gt;modern plastic furniture&lt;/span&gt; for home design.</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;&lt;strong&gt;Low&lt;/strong&gt; is assigned to an atypical aspect in any of the cases below:</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;The attractor and the atypical aspect are distinct and specific concepts with only a small degree of conceptual similarity between<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>them. For example, &lt;span style="background-color: #ADFF2F;font-style: italic;"&gt;surfing&lt;/span&gt; vs. &lt;span style="background-color: #FFD700;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>font-style: italic;"&gt;sand sculpture&lt;/span&gt; or &lt;span style="background-color: #FFD700;font-style: italic;"&gt;swimming pool&lt;/span&gt;.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;The attractor and the atypical aspect are very broad concepts with a very limited conceptual overlap. For example,<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span style="background-color: #ADFF2F;font-style: italic;"&gt;visual aesthetics&lt;/span&gt; vs. &lt;span style="background-color: #FFD700;font-style:</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>italic;"&gt;art&lt;/span&gt;.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;&lt;strong&gt;Medium&lt;/strong&gt; is assigned to an atypical aspect in any of the cases below:</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;li&gt;The attractor is a broad concept, while the atypical aspect is a more specific concept subsumed by that broad concept. For example,<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;span style="background-color: #ADFF2F;font-style: italic;"&gt;interior design&lt;/span&gt; vs. &lt;span style="background-color: #FFD700;font-style:<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                  </span>italic;"&gt;lime green counter&lt;/span&gt;.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;li&gt;Conversely, the attractor is a specific concept that is subsumed by the broader atypical aspect. For example,<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;span style="background-color: #ADFF2F;font-style: italic;"&gt;live pop music performances&lt;/span&gt; vs. &lt;span style="background-color: #FFD700;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>font-style: italic;"&gt;music&lt;/span&gt;.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;&lt;strong&gt;High&lt;/strong&gt; is assigned to an atypical aspect if:</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;li&gt;The atypical aspect closely matches an attractor in the user profile. Both the attractor and the atypical aspect must involve the same<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                  </span>specific context. For example, &lt;span style="background-color: #ADFF2F;font-style: italic;"&gt;passionate about animal wellfare&lt;/span&gt; vs.<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;span style="background-color: #FFD700; font-style: italic;"&gt;free bags of dog food for charity&lt;/span&gt;.</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p style="color: blue;"&gt;&lt;strong&gt;Note that the utility value depends only on the user profile and the atypical aspect. As such, ignore the sentiment of<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">      </span>the review or the overall quality of the hair salon.&lt;/strong&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>Optionally, you can also provide an explanation for your label selection, especially if it was a more difficult case.</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;br&gt;&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>You can use the &lt;strong&gt;'Prev Aspect'&lt;/strong&gt; and &lt;strong&gt;'Next Aspect'&lt;/strong&gt; buttons to go to the annotation page for the previous and next atypical<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">      </span>aspect, respectively. When you are done labeling all atypical aspects, you can click on the Submit button.</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="detailed" class="tab-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h3&gt;Detailed Instructions&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p style="color: blue;"&gt;&lt;strong&gt;Please read the instructions and examples carefully to avoid having your response rejected.&lt;/strong&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h4&gt;Assessing Relevance of Atypical Aspects in Reviews Based on User Profiles&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;You will be given a &lt;strong&gt;User Profile&lt;/strong&gt; and a &lt;strong&gt;Review&lt;/strong&gt; for a hair salon.</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;br&gt;&lt;br&gt;First, you will read the profile to identify objects or activities that the user finds interesting, appealing, or useful, henceforth referred to<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">      </span>as &lt;em&gt;attractors&lt;/em&gt;. These typically relate to the user’s hobbies, passions, or lifestyle.</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;br&gt;&lt;br&gt;Next, you will read the review, which contains one or more aspects that are atypical for a hair salon. On each page, one<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;span style="background-color: #FFD700;font-style: italic;"&gt;atypical aspect&lt;/span&gt; will be highlighted at a time.</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;br&gt;&lt;br&gt;Your task is to determine if the highlighted atypical aspect would be interesting, appealing, or useful to the user based on their profile, i.e.,<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">      </span>if that atypical aspect is relevant to any of the attractors in the user profile. For each atypical aspect, select its utility value among &lt;strong&gt;'None'&lt;/strong&gt;,<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;strong&gt;'Low'&lt;/strong&gt;, &lt;strong&gt;'Medium'&lt;/strong&gt;, or &lt;strong&gt;'High'&lt;/strong&gt; using the following guidelines below. Note that, for ease of understanding,<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">      </span>in these examples the &lt;span style="background-color: #ADFF2F;font-style: italic;"&gt;attractors&lt;/span&gt; are highlighted in green.</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;&lt;strong&gt;None&lt;/strong&gt; is assigned to an atypical aspect in any of the cases below:</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;li&gt;The atypical aspect lacks any relevance to the attractors in the user profile.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;li&gt;The atypical aspect, despite appearing relevant, is too specific for the user’s very broad interests or hobbies in the profile. For<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                  </span>example, an atypical aspect such as &lt;span style="background-color: #FFD700;font-style: italic;"&gt;live music&lt;/span&gt;, is too specific for</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>the very broad attractor &lt;span style="background-color: #ADFF2F;font-style: italic;"&gt;creating a playful and family-friendly environment&lt;/span&gt;,<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                  </span>as such its utility should be annotated as None.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;li&gt;The atypical aspect involves materials or items that, despite appearing relevant, belong to a completely different context or are used<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                  </span>for a completely different purpose than those in the user profile. For example, if in the review the atypical aspect of<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;span style="background-color: #FFD700;font-style: italic;"&gt;high-end look&lt;/span&gt; pertains to architecture or interior design, whereas the<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                  </span>attractor &lt;span style="background-color: #ADFF2F;font-style: italic;"&gt;strives to achieve a high-end look&lt;/span&gt; in the user profile is about<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                  </span>fashion choices, the utility of the atypical aspect should be annotated as None. Similarly, if according to the profile a user is interested in</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;span style="background-color: #ADFF2F;font-style: italic;"&gt;modern plastic furniture&lt;/span&gt; for home design, this does not necessarily<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                  </span>translate to an interest in all plastic items. Therefore, the utility of an atypical aspect like<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;span style="background-color: #FFD700;font-style: italic;"&gt;plastic ponchos&lt;/span&gt; that are sold by a hair salon should be annotated as None.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;&lt;strong&gt;Low&lt;/strong&gt; is assigned to an atypical aspect in any of the cases below:</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;The attractor and the atypical aspect are distinct and specific concepts with only a small degree of conceptual similarity between<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>them. For example, if a user is passionate about &lt;span style="background-color: #ADFF2F;font-style: italic;"&gt;surfing&lt;/span&gt;, the utility<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>of an atypical aspect such as a &lt;span style="background-color: #FFD700;font-style: italic;"&gt;sand sculpture&lt;/span&gt; or a<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span style="background-color: #FFD700;font-style: italic;"&gt;swimming pool&lt;/span&gt; should be annotated as Low, as they have only a small<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>degree of conceptual similarity to surfing.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;The attractor and the atypical aspect are very broad concepts with a very limited conceptual overlap. For example, if a user has a<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>general interest in &lt;span style="background-color: #ADFF2F;font-style: italic;"&gt;visual aesthetics&lt;/span&gt;, which can include photography,<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>painting, and architectural design, but the atypical aspect is &lt;span style="background-color: #FFD700;font-style: italic;"&gt;art&lt;/span&gt;,</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>which can include handicrafts, paintings, and sculptures, then even though there is some overlap between these two very broad concepts,<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>the overlap is small, as such the utility of the atypical aspect should be annotated as Low.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;&lt;strong&gt;Medium&lt;/strong&gt; is assigned to an atypical aspect in any of the cases below:</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;li&gt;The attractor is a broad concept, while the atypical aspect is a more specific concept subsumed by that broad concept. For example, if a<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                  </span>user is passionate about a broad topic such as &lt;span style="background-color: #ADFF2F;font-style: italic;"&gt;interior design&lt;/span&gt;, an<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                  </span>atypical aspect like a &lt;span style="background-color: #FFD700;font-style: italic;"&gt;lime green counter&lt;/span&gt; would have Medium utility,<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                  </span>as it may be very appealing to the user.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;li&gt;Conversely, the attractor is a specific concept that is subsumed by the broader atypical aspect. For example, if a user enjoys listening<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                  </span>to &lt;span style="background-color: #ADFF2F;font-style: italic;"&gt;live pop music performances&lt;/span&gt;, they might also be interested in listening<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                  </span>to any &lt;span style="background-color: #FFD700;font-style: italic;"&gt;music&lt;/span&gt; in general, hence the atypical aspect<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;span style="background-color: #FFD700;font-style: italic;"&gt;music&lt;/span&gt; would have Medium utility for the user.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;&lt;strong&gt;High&lt;/strong&gt; is assigned to an atypical aspect if:</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;li&gt;The atypical aspect closely matches an attractor in the user profile. Both the attractor and the atypical aspect must involve the same<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                  </span>specific context. For example, if a user is &lt;span style="background-color: #ADFF2F;font-style: italic;"&gt;passionate about animal wellfare&lt;/span&gt;, then<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-tab-span">	</span> <span class="Apple-converted-space">      </span>a hair salon that offers &lt;span style="background-color: #FFD700;font-style: italic;"&gt;free bags of dog food for charity&lt;/span&gt; would have High<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                  </span>utility. In this example, it was important that the bags of dog food happen in the same context, i.e. for wellfare and charity.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p style="color: blue;"&gt;&lt;strong&gt;Note that the utility value depends only on the user profile and the atypical aspect; as such, utility is independent of<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">      </span>the overall quality of the hair salon or the sentiment of the review. Thus, a 5 star hair salon may have an atypical aspect with very low utility for the<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">      </span>user; viceversa, there may be 1 star hair salons with atypical aspects that have a high utility value for the user.&lt;/strong&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>After selecting the utility value for the highlighted atypical aspect, you have the option to also provide an explanation for your decision. You can<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">      </span>write your own and/or &lt;u&gt;you can copy &amp; paste the applicable guideline from the Instructions tab&lt;/u&gt;.</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;br&gt;&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>Once you select a utility value for the highlighted atypical aspect, you can click on the &lt;strong&gt;‘Next Aspect'&lt;/strong&gt; button to annotate another<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">      </span>atypical aspect from the same review (if available). You can also click on the &lt;strong&gt;‘Prev Aspect’&lt;/strong&gt; if you want to change your previous annotation.</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;br&gt;&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>When you are done labeling all atypical aspects in the current review, you can click on the Submit button.</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="examples" class="tab-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;positive-example&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- User Profile Section --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h4&gt;&lt;u&gt;Example 1:&lt;/u&gt;&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h4&gt;User Profile:&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Simone is a devoted single mom living in Orlando, Florida, with her 6-year-old daughter Mia. Their home is a testament to their shared love for<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>Disney princesses, with each room sprinkled with themed decorations that spark imagination and joy. Simone's passion for bringing fairy tales to<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>life goes beyond her doorstep; she actively participates in charitable activities within her community. As an avid crafter, she combines her knack<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>for creativity with philanthropy by making blankets for local animal shelters. This activity not only allows her to help animals in need but also<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>serves as valuable teaching moments for Mia about kindness and giving back. During weekends, Simone and Mia often volunteer at these shelters, turning<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>each visit into a heartwarming adventure of compassion and care. &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- Review Section --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h4&gt;Review:&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Cookie Cutters is perfect for kids and especially those with sensory issues. There are &lt;span style="background-color: #FFD700;font-style: italic;"&gt;play activities&lt;/span&gt;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>in the waiting area. The chairs are all themed like Thomas, Disney princess, fire truck, etc. Each station has a smart TV so kids can pick out their<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>favorite show on Netflix, Youtube, etc. The best part about the chairs is that the kids sit deep in there and get buckled in so that they can't kick<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>anybody or anything.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- Utility Selection (Non-editable) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div id="utilityD"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h4&gt;Select Utility Value:&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="radio" id="NoneD" name="utilityValueD" value="None" disabled&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label for="NoneD"&gt;None&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="radio" id="LowD" name="utilityValueD" value="Low" checked disabled&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label for="LowD"&gt;Low&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="radio" id="MediumD" name="utilityValueD" value="Medium" disabled&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label for="MediumD"&gt;Medium&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="radio" id="HighD" name="utilityValueD" value="High" disabled&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label for="HighD"&gt;High&lt;/label&gt; &lt;!-- This one is pre-selected and cannot be changed --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- Explanation Input (Optional, editable) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Explanation (optional):&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Simone engages in activities with her daughter that bring joy and imagination. While &lt;em&gt;play activities&lt;/em&gt; are not directly related to Simone's<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>main interests, they could be somewhat appealing as they might entertain Mia. Thus, it is labeled as Low.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>Guideline applied: "The attractor and the atypical aspect are distinct and specific concepts with only a small degree of conceptual similarity between<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>them."&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/positive-example&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;positive-example&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- User Profile Section --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h4&gt;&lt;u&gt;Example 2:&lt;/u&gt;&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h4&gt;User Profile:&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Mia is a graphic designer from Honolulu, Hawaii, where she runs her freelance business. She grew up near the beach and developed a passion for<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>surfing early on, incorporating it into her daily routine. Before starting work each day, Mia enjoys catching the morning waves, which helps clear<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>her mind and often inspires her designs. Surfing keeps her physically active and mentally sharp, essential for tackling her creative projects. Mia<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>also participates in local initiatives to protect marine life and enjoys guiding young designers and surfers by sharing practical tips on design<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>and surfing fundamentals.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- Review Section --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h4&gt;Review:&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;The Blue Sage Vegetarian Grille, which is right across the street from Fringe is the ""hottest"" restaurant on yelp in my area and it has been<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>for many months, the Fringe Salon is the ""hottest"" salon reviewed in Philadelphia and Las Margaritas is right next door to this Fringe location<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>and has been reviewed a half dozen times. I have been to Las Margaritas a couple of times, but have not reviewed it yet...</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;br&gt;&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>However, I was in dire need of a hair cut and this stucco building clicked; close to home, the reviews for the few other locations were validated as<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>awesome and my very long, over grown mane needed to be clipped, not to mention they were voted best of Buck's County and featured as one of the top<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>200 fastest growing salons in the USA in Salon Today magazine.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;br&gt;&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>Once seated with Lisa, she made very little small talk and was interested in exactly what it was I was looking for. I then pulled out a picture of a<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>short bob and said I want it this short and I will put it behind my ears. She loved the fact that I had brought a picture and then sent me off to<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>Kathy to have a great shampoo.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;br&gt;&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>The haircut, shampoo and blow dry was $50.00, which can range between $45.00 to $65.00 depending on your cut, first time customers receive a 20%<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>discount, so go whole hog with coloring and highlights if you would like. Anytime you refer others they and you will receive 20% off and bangs are<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>trimmed free of charge forever, which needs no appointment and believe me, this will come in handy as my hair grows quick and I am the worst at<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>trimming bangs!</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;br&gt;&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>Bottom line, I am so happy that I had the long locks cut off, it was not the 10 inches they require to donate to cancer victims and they were not<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>aware of the campaign mentioned by the shampoo gal Kathy about the &lt;span style="background-color: #FFD700;font-style: italic;"&gt;hair donations&lt;/span&gt;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>to soak up the oil spills.<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;br&gt;&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>I'm a dreamer and one day, I envision Edward Scissorhands cutting my hair and scattering the remnants for the birds to make nests in his expressive<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>gardens.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- Utility Selection (Non-editable) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div id="utilityF"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h4&gt;Select Utility Value:&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="radio" id="NoneF" name="utilityValueF" value="None" disabled&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label for="NoneF"&gt;None&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="radio" id="LowF" name="utilityValueF" value="Low" disabled&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label for="LowF"&gt;Low&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="radio" id="MediumF" name="utilityValueF" value="Medium" checked disabled&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label for="MediumF"&gt;Medium&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="radio" id="HighF" name="utilityValueF" value="High" disabled&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label for="HighF"&gt;High&lt;/label&gt; &lt;!-- This one is pre-selected and cannot be changed --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- Explanation Input (Optional, editable) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Explanation (optional):&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Mia participates in local initiatives to protect marine life and is involved in community activities. &lt;em&gt;Hair donations&lt;/em&gt; to soak up oil spills have<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>some relevance to her passion for environmental conservation, as it could be considered a specific activity within the broad concept of environmental<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>conservation. Thus, it is labeled as Medium.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>Guideline applied: "The attractor is a broad concept, while the atypical aspect is a more specific concept subsumed by that broad concept."&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/positive-example&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;positive-example&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- User Profile Section --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h4&gt;&lt;u&gt;Example 3:&lt;/u&gt;&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h4&gt;User Profile:&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Jessica, a devoted mother and passionate advocate for animal welfare, resides in the vibrant community of Boulder, Colorado. Working as a high<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>school guidance counselor, she dedicates her time to nurturing young minds and actively participates in local charity events focused on supporting<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>both people and animals in need. Jessica is always on the lookout for businesses that align with her values, especially those that offer meaningful<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>experiences for her family while contributing positively to the community. She particularly treasures places where around the holidays they run<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>specials actions that teach compassion and kindness to her children. Additionally, Jessica values self-care and enjoys pampering sessions such as<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>waxing that understand the importance of 'me time' amidst a busy lifestyle.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- Review Section --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h4&gt;Review:&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;I came here for the first time today because they were advertising a discount on Groupon Now. I'd heard of this salon before but never went in<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>because a lot of salons in the area are expensive and too yuppy for my taste. I was impressed with the decor, very simple and pretty, and never trying<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>too hard. I especially like the Craftsman tool boxes that serve as beauty tool boxes...so neat! Since I was a walk-in, I had to wait an hour for my<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>appointment but I usually wait that long anyway so it's all good! Derek met me at the counter, shook my hand, and led me to his chair. We had a brief<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>consultation about what I was looking for, and he instantly understood my style (not too showy, not a lot of product, soft and flowy). He immediately<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>got to work, washing my hair, cutting it, always stopping to show me along the way. While he was blow drying it he would show me the brushes, the<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>dryer attachments and his hand movements, so I could style it at home. I was so happy with the results, it was exactly what I was hoping for. Soft,<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>flowy and big (my hair motto is the bigger the hair the closer to God!). He was very polite and made small talk during the whole process, we even<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>shared cooking tips! What was really the cherry on top was when he told me that, around the holidays, he runs specials like, bring a<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span style="background-color: #FFD700;font-style: italic;"&gt;bag of dog food&lt;/span&gt; or blankets for the local shelters, and get a certain percentage<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>off your service. I'm a vet tech at a local clinic, and it was so amazing to hear that he puts in extra effort to help homeless pets. All in all,<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>it was a great experience and I'll def be going back! Also, I'd recommend to make your next appointment same day, you get a discount!&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- Utility Selection (Non-editable) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div id="utilityH"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h4&gt;Select Utility Value:&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="radio" id="NoneH" name="utilityValueH" value="None" disabled&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label for="NoneH"&gt;None&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="radio" id="LowH" name="utilityValueH" value="Low" disabled&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label for="LowH"&gt;Low&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="radio" id="MediumH" name="utilityValueH" value="Medium" disabled&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label for="MediumH"&gt;Medium&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="radio" id="HighH" name="utilityValueH" value="High" checked disabled&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label for="HighH"&gt;High&lt;/label&gt; &lt;!-- This one is pre-selected and cannot be changed --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- Explanation Input (Optional, editable) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Explanation (optional):&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Jessica is a passionate advocate for animal welfare and actively participates in charity events supporting animals in need. Bringing a &lt;em&gt;bag of<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>dog food&lt;/em&gt; to support local shelters aligns closely with her values. Thus, it is labeled as High.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>Guideline applied: "The atypical aspect closely matches an attractor in the user profile. Both the attractor and the atypical aspect must involve the<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>same specific context."&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/positive-example&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;positive-example&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- User Profile Section --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h4&gt;&lt;u&gt;Example 4:&lt;/u&gt;&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h4&gt;User Profile:&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Jessica, a devoted mother and passionate advocate for animal welfare, resides in the vibrant community of Boulder, Colorado. Working as a high<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>school guidance counselor, she dedicates her time to nurturing young minds and actively participates in local charity events focused on supporting<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>both people and animals in need. Jessica is always on the lookout for businesses that align with her values, especially those that offer meaningful<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>experiences for her family while contributing positively to the community. She particularly treasures places where around the holidays they run<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>specials actions that teach compassion and kindness to her children. Additionally, Jessica values self-care and enjoys pampering sessions such as<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>waxing that understand the importance of 'me time' amidst a busy lifestyle.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- Review Section --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h4&gt;Review:&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;I came here for the first time today because they were advertising a discount on Groupon Now. I'd heard of this salon before but never went in<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>because a lot of salons in the area are expensive and too yuppy for my taste. I was impressed with the decor, very simple and pretty, and never trying<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>too hard. I especially like the &lt;span style="background-color: #FFD700;font-style: italic;"&gt;Craftsman tool boxes&lt;/span&gt; that serve as beauty tool<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>boxes...so neat! Since I was a walk-in, I had to wait an hour for my appointment but I usually wait that long anyway so it's all good! Derek met me at<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>the counter, shook my hand, and led me to his chair. We had a brief consultation about what I was looking for, and he instantly understood my style<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>(not too showy, not a lot of product, soft and flowy). He immediately got to work, washing my hair, cutting it, always stopping to show me along the<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>way. While he was blow drying it he would show me the brushes, the dryer attachments and his hand movements, so I could style it at home. I was so<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>happy with the results, it was exactly what I was hoping for. Soft, flowy and big (my hair motto is the bigger the hair the closer to God!). He was<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>very polite and made small talk during the whole process, we even shared cooking tips! What was really the cherry on top was when he told me that,<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>around the holidays, he runs specials like, bring a bag of dog food or blankets for the local shelters, and get a certain percentage off your service.<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>I'm a vet tech at a local clinic, and it was so amazing to hear that he puts in extra effort to help homeless pets. All in all, it was a great<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>experience and I'll def be going back! Also, I'd recommend to make your next appointment same day, you get a discount!&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- Utility Selection (Non-editable) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div id="utilityA"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h4&gt;Select Utility Value:&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="radio" id="NoneA" name="utilityValueA" value="None" checked disabled&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label for="NoneA"&gt;None&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="radio" id="LowA" name="utilityValueA" value="Low" disabled&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label for="LowA"&gt;Low&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="radio" id="MediumA" name="utilityValueA" value="Medium" disabled&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label for="MediumA"&gt;Medium&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="radio" id="HighA" name="utilityValueA" value="High" disabled&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label for="HighA"&gt;High&lt;/label&gt; &lt;!-- This one is pre-selected and cannot be changed --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- Explanation Input (Optional, editable) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Explanation (optional):&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;While the use of &lt;em&gt;Craftsman tool boxes&lt;/em&gt; as beauty tool boxes is a unique aspect, it does not align with Jessica's interests in family<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>experiences, animal welfare, or self-care. Thus, it is labeled as None.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>Guideline applied: "The atypical aspect lacks any relevance to the attractors in the user profile."&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/positive-example&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;positive-example&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- User Profile Section --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h4&gt;&lt;u&gt;Example 5:&lt;/u&gt;&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h4&gt;User Profile:&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Michelle is a graphic designer residing in Seattle, who has skillfully melded her passion for minecraft with a love for cult classic films. Her<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>apartment mirrors this blend of interests, featuring simple yet stylish decor that hints at both digital adventure realms and the timeless charm found<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>in her favorite movie. Michelle spends her weekends savoring coffee and diving into graphic novels or sketching character designs.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- Review Section --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h4&gt;Review:&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Lots of good things about this place, but almost as many not so good things. I continue to take my youngest child there because of the experience<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>it offers, but I do it every time kicking and screaming. And if she were a boy (meaning, needing more frequent haircuts as opposed to the twice per<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>year my daughter needs) then I'd definitely find somewhere else.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;br&gt;&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>The pros: The inside is bright, cheerful, and clean. They do appointment times, which I wish I had noticed before. As you walk in, they have a play<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>area to the right where you can wait, along with some &lt;span style="background-color: #FFD700;font-style: italic;"&gt;video games&lt;/span&gt; hooked up to TV's<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>on the other side for older kids. While the kids get their hair cut, they can choose to sit in a regular seat, or a taxi, firetruck, or race car. They<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>can also choose which DVD they'd like to watch, and there's quite an assortment of Disney and Nickelodeon favorites. They can also opt to play a video<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>game. Win for wiggly kids. If that's not enough, they have toys in the drawer for your child to play with (although, I will pass, I don't want my kid<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>touching something that's been handled by other peoples' crying, drooling, snotty children). The employees are usually very nice, and you can sit very<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>near to your child while they get their trim. When finished, kids get a lollipop, and if it's their first haircut they even give you a keepsake card<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>to put their first trim into. &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- Utility Selection (Non-editable) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div id="utilityG"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h4&gt;Select Utility Value:&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="radio" id="NoneG" name="utilityValueG" value="None" disabled&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label for="NoneG"&gt;None&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="radio" id="LowG" name="utilityValueG" value="Low" disabled&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label for="LowG"&gt;Low&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="radio" id="MediumG" name="utilityValueG" value="Medium" checked disabled&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label for="MediumG"&gt;Medium&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="radio" id="HighG" name="utilityValueG" value="High" disabled&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label for="HighG"&gt;High&lt;/label&gt; &lt;!-- This one is pre-selected and cannot be changed --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- Explanation Input (Optional, editable) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Explanation (optional):&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;While Michelle is passionate about playing Minecraft, the review mentions &lt;em&gt;video games&lt;/em&gt; in a broad sense, which could potentially align<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>with his interest in engaging activities, therefore it is labeled as Medium.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>Guideline applied: "The attractor is a specific concept that is subsumed by the broader atypical aspect."&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/positive-example&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;positive-example&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- User Profile Section --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h4&gt;&lt;u&gt;Example 6:&lt;/u&gt;&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h4&gt;User Profile:&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Sophie is a tech consultant in San Francisco with a keen eye for design and an appreciation for the aesthetics of her living space. Outside her<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>demanding job, Sophie indulges in redesigning her home to reflect a high-end look that's both functional and playful. She has a particular fondness<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>for modern plastic furniture, which she finds adds a modern touch to rooms without sacrificing comfort or durability. Living with her partner and<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>their two young children, Sophie is always on the lookout for ways to incorporate fun elements that appeal to the whole family. One such highlight<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>is the 'big Connect 4' game in their family room—a hit not only with the kids but also provides endless entertainment during family gatherings. Her<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>passion for blending sleek design with practical, kid-friendly features makes her home uniquely inviting.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- Review Section --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h4&gt;Review:&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;April did a shoulder length haircut and made my hair look fresh and clean with a shampoo, blowout, and style. Very personable and friendly. Very<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>easy to book, clean environment, nice staff. The salon also had a little gift shop inside.I purchased a<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span style="background-color: #FFD700;font-style: italic;"&gt;cute wallet&lt;/span&gt; for myself, a little stuffed puppy for my niece!!&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- Utility Selection (Non-editable) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div id="utilityB"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h4&gt;Select Utility Value:&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="radio" id="NoneB" name="utilityValueB" value="None" checked disabled&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label for="NoneB"&gt;None&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="radio" id="LowB" name="utilityValueB" value="Low" disabled&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label for="LowB"&gt;Low&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="radio" id="MediumB" name="utilityValueB" value="Medium" disabled&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label for="MediumB"&gt;Medium&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="radio" id="HighB" name="utilityValueB" value="High" disabled&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label for="HighB"&gt;High&lt;/label&gt; &lt;!-- This one is pre-selected and cannot be changed --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- Explanation Input (Optional, editable) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Explanation (optional):&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;While Sophie may appreciate unique and functional designs, the &lt;em&gt;cute wallet&lt;/em&gt; does not strongly align with her primary interests in modern<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>interior design and furniture, therefore it is labeled as None.<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>Guideline applied: "The atypical aspect, despite appearing relevant, is too specific for the user’s very broad interests or hobbies in the profile."&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/positive-example&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;positive-example&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- User Profile Section --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h4&gt;&lt;u&gt;Example 7:&lt;/u&gt;&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h4&gt;User Profile:&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Lara is a boutique owner who resides in the bustling arts district of her city, where she seamlessly blends her passion for makeup with an<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>admiration for artwork. Her boutique not only features trendy fashion but also serves as a gallery space for artists in the community, displaying<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>everything from intricate paintings to dynamic sculptures. Lara’s deep engagement with the art scene inspired her to host makeup workshops that draw<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>upon color theories and textures found in these artworks, creating a unique bridge between visual and cosmetic arts. This intersection became a<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>signature of hers, attracting a diverse clientele eager to learn how to incorporate artistic principles into their beauty routines. In her free time,<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>Lara enjoys exploring new art exhibits or experimenting with makeup looks inspired by pieces she plans to showcase next.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- Review Section --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h4&gt;Review:&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Thank you groupon for taking me to this salon! I've driven past mudHoney almost every day on my way to work but I've never stopped in before since<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>I've always had another salon I've gone to. Recently, I've had to search for a new place to get my hair done and lo and behold: groupon for a cut and<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>treatment!<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;br&gt;&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>It's been so long since I've gotten a haircut that my ends were gross and so dry! I'm growing my hair out so I was worried that they would cut off a<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>huge chunk (like they always do when you ask for a trim) just to get rid of all the dead split ends. Surprisingly, Hannah listened to what I wanted<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>(a trim) and did just that!<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;br&gt;&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>In addition to actually listening to what I wanted, they recommended products and weren't super pushy about it. They don't carry too much for selection<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>but the product they do carry is high quality. The salon has a &lt;span style="background-color: #FFD700;font-style: italic;"&gt;great modern feel&lt;/span&gt; to<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>it and showcases local artwork that you can actually purchase. I'll definitely be going back and I recommend trying them out!&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- Utility Selection (Non-editable) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div id="utilityE"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h4&gt;Select Utility Value:&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="radio" id="NoneE" name="utilityValueE" value="None" disabled&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label for="NoneE"&gt;None&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="radio" id="LowE" name="utilityValueE" value="Low" checked disabled&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label for="LowE"&gt;Low&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="radio" id="MediumE" name="utilityValueE" value="Medium" disabled&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label for="MediumE"&gt;Medium&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="radio" id="HighE" name="utilityValueE" value="High" disabled&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label for="HighE"&gt;High&lt;/label&gt; &lt;!-- This one is pre-selected and cannot be changed --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- Explanation Input (Optional, editable) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Explanation (optional):&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;While Lara appreciates visual aesthetics and has an interest in art, the description of the salon's great modern feel is too broad and general to<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>closely match her specific interests in makeup and visual art. It shows some degree of conceptual similarity but is not specific enough. Thus, it is<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>labeled as Low.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>Guideline applied: "The attractor and the atypical aspect are very broad concepts with a very limited conceptual overlap."&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/positive-example&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;positive-example&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- User Profile Section --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h4&gt;&lt;u&gt;Example 8:&lt;/u&gt;&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h4&gt;User Profile:&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Lara is a boutique owner who resides in the bustling arts district of her city, where she seamlessly blends her passion for makeup with an<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>admiration for artwork. Her boutique not only features trendy fashion but also serves as a gallery space for artists in the community, displaying<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>everything from intricate paintings to dynamic sculptures. Lara’s deep engagement with the art scene inspired her to host makeup workshops that draw<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>upon color theories and textures found in these artworks, creating a unique bridge between visual and cosmetic arts. This intersection became a<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>signature of hers, attracting a diverse clientele eager to learn how to incorporate artistic principles into their beauty routines. In her free time,<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>Lara enjoys exploring new art exhibits or experimenting with makeup looks inspired by pieces she plans to showcase next.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- Review Section --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h4&gt;Review:&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;I came here for the first time today because they were advertising a discount on Groupon Now. I'd heard of this salon before but never went in<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>because a lot of salons in the area are expensive and too yuppy for my taste. I was impressed with the decor, very simple and pretty, and never trying<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>too hard. I especially like the &lt;span style="background-color: #FFD700;font-style: italic;"&gt;Craftsman tool boxes&lt;/span&gt; that serve as beauty tool<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>boxes...so neat! Since I was a walk-in, I had to wait an hour for my appointment but I usually wait that long anyway so it's all good! Derek met me at<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>the counter, shook my hand, and led me to his chair. We had a brief consultation about what I was looking for, and he instantly understood my style<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>(not too showy, not a lot of product, soft and flowy). He immediately got to work, washing my hair, cutting it, always stopping to show me along the<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>way. While he was blow drying it he would show me the brushes, the dryer attachments and his hand movements, so I could style it at home. I was so<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>happy with the results, it was exactly what I was hoping for. Soft, flowy and big (my hair motto is the bigger the hair the closer to God!). He was<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>very polite and made small talk during the whole process, we even shared cooking tips! What was really the cherry on top was when he told me that,<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>around the holidays, he runs specials like, bring a bag of dog food or blankets for the local shelters, and get a certain percentage off your service.<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>I'm a vet tech at a local clinic, and it was so amazing to hear that he puts in extra effort to help homeless pets. All in all, it was a great<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>experience and I'll def be going back! Also, I'd recommend to make your next appointment same day, you get a discount!&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- Utility Selection (Non-editable) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div id="utilityC"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h4&gt;Select Utility Value:&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="radio" id="NoneC" name="utilityValueC" value="None" checked disabled&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label for="NoneC"&gt;None&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="radio" id="LowC" name="utilityValueC" value="Low" disabled&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label for="LowC"&gt;Low&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="radio" id="MediumC" name="utilityValueC" value="Medium" disabled&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label for="MediumC"&gt;Medium&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="radio" id="HighC" name="utilityValueC" value="High" disabled&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label for="HighC"&gt;High&lt;/label&gt; &lt;!-- This one is pre-selected and cannot be changed --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- Explanation Input (Optional, editable) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Explanation (optional):&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;While Lara has an interest in visual aesthetics and art, the use of &lt;em&gt;Craftsman tool boxes&lt;/em&gt; as beauty tool boxes does not align with her<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>specific interests in makeup, fashion, or visual art. While use of toolboxes are unique, they don’t contribute to the aesthetic or artistic environment<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>that Lara values. Thus, it is labeled as None.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>Guideline applied: "The atypical aspect involves materials or items that, despite appearing relevant, belong to a completely different context or<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>are used for a completely different purpose than those in the user profile."&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/positive-example&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- Main Content --&gt;</p>
+<p class="p1">&lt;crowd-form answer-format="flatten-objects"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- View Instructions Button --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;crowd-button onclick="showInstructions()"&gt;View Instructions&lt;/crowd-button&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- User Profile Section --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h4&gt;User Profile:&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;${profile}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Hidden business id for User Profile --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;input type="hidden" name="businessId" value="${businessId}"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Dynamically Display Review and Aspect Sections --&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Aspect 1 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="aspect1" style="display: block;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h4&gt;Review:&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;${review1}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="utility1" style="display: block;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h4&gt;Select Utility Value:&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="radio" id="None1" name="utilityValue1" value="None" required checked&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;label for="None1"&gt;None&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="radio" id="Low1" name="utilityValue1" value="Low" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;label for="Low1"&gt;Low&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="radio" id="Medium1" name="utilityValue1" value="Medium" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;label for="Medium1"&gt;Medium&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="radio" id="High1" name="utilityValue1" value="High" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;label for="High1"&gt;High&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="explanationInput1" class="explanationInput" style="display: block;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;Explanation (optional):&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;crowd-text-area id="explanation1" name="explanation1" rows="4" placeholder="Your explanation here..."&gt;&lt;/crowd-text-area&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Aspect 2 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="aspect2" style="display: none;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h4&gt;Review:&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;${review2}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="utility2" style="display: none;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h4&gt;Select Utility Value:&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="radio" id="None2" name="utilityValue2" value="None" required checked&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;label for="None2"&gt;None&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="radio" id="Low2" name="utilityValue2" value="Low" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;label for="Low2"&gt;Low&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="radio" id="Medium2" name="utilityValue2" value="Medium" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;label for="Medium2"&gt;Medium&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="radio" id="High2" name="utilityValue2" value="High" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;label for="High2"&gt;High&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="explanationInput2" class="explanationInput" style="display: none;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;Explanation (optional):&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;crowd-text-area id="explanation2" name="explanation2" rows="4" placeholder="Your explanation here..."&gt;&lt;/crowd-text-area&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Aspect 3 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="aspect3" style="display: none;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h4&gt;Review:&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;${review3}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="utility3" style="display: none;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h4&gt;Select Utility Value:&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="radio" id="None3" name="utilityValue3" value="None" required checked&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;label for="None3"&gt;None&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="radio" id="Low3" name="utilityValue3" value="Low" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;label for="Low3"&gt;Low&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="radio" id="Medium3" name="utilityValue3" value="Medium" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;label for="Medium3"&gt;Medium&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="radio" id="High3" name="utilityValue3" value="High" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;label for="High3"&gt;High&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="explanationInput3" class="explanationInput" style="display: none;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;Explanation (optional):&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;crowd-text-area id="explanation3" name="explanation3" rows="4" placeholder="Your explanation here..."&gt;&lt;/crowd-text-area&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Aspect 4 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="aspect4" style="display: none;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h4&gt;Review:&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;${review4}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="utility4" style="display: none;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h4&gt;Select Utility Value:&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="radio" id="None4" name="utilityValue4" value="None" required checked&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;label for="None4"&gt;None&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="radio" id="Low4" name="utilityValue4" value="Low" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;label for="Low4"&gt;Low&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="radio" id="Medium4" name="utilityValue4" value="Medium" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;label for="Medium4"&gt;Medium&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="radio" id="High4" name="utilityValue4" value="High" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;label for="High4"&gt;High&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="explanationInput4" class="explanationInput" style="display: none;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;Explanation (optional):&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;crowd-text-area id="explanation4" name="explanation4" rows="4" placeholder="Your explanation here..."&gt;&lt;/crowd-text-area&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Aspect 5 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="aspect5" style="display: none;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h4&gt;Review:&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;${review5}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="utility5" style="display: none;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h4&gt;Select Utility Value:&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="radio" id="None5" name="utilityValue5" value="None" required checked&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;label for="None5"&gt;None&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="radio" id="Low5" name="utilityValue5" value="Low" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;label for="Low5"&gt;Low&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="radio" id="Medium5" name="utilityValue5" value="Medium" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;label for="Medium5"&gt;Medium&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="radio" id="High5" name="utilityValue5" value="High" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;label for="High5"&gt;High&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="explanationInput5" class="explanationInput" style="display: none;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;Explanation (optional):&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;crowd-text-area id="explanation5" name="explanation5" rows="4" placeholder="Your explanation here..."&gt;&lt;/crowd-text-area&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Aspect 6 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="aspect6" style="display: none;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h4&gt;Review:&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;${review6}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="utility6" style="display: none;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h4&gt;Select Utility Value:&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="radio" id="None6" name="utilityValue6" value="None" required checked&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;label for="None6"&gt;None&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="radio" id="Low6" name="utilityValue6" value="Low" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;label for="Low6"&gt;Low&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="radio" id="Medium6" name="utilityValue6" value="Medium" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;label for="Medium6"&gt;Medium&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="radio" id="High6" name="utilityValue6" value="High" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;label for="High6"&gt;High&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="explanationInput6" class="explanationInput" style="display: none;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;Explanation (optional):&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;crowd-text-area id="explanation6" name="explanation6" rows="4" placeholder="Your explanation here..."&gt;&lt;/crowd-text-area&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Aspect 7 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="aspect7" style="display: none;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h4&gt;Review:&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;${review7}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="utility7" style="display: none;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h4&gt;Select Utility Value:&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="radio" id="None7" name="utilityValue7" value="None" required checked&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;label for="None7"&gt;None&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="radio" id="Low7" name="utilityValue7" value="Low" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;label for="Low7"&gt;Low&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="radio" id="Medium7" name="utilityValue7" value="Medium" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;label for="Medium7"&gt;Medium&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="radio" id="High7" name="utilityValue7" value="High" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;label for="High7"&gt;High&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="explanationInput7" class="explanationInput" style="display: none;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;Explanation (optional):&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;crowd-text-area id="explanation7" name="explanation7" rows="4" placeholder="Your explanation here..."&gt;&lt;/crowd-text-area&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Aspect 8 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="aspect8" style="display: none;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h4&gt;Review:&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;${review8}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="utility8" style="display: none;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h4&gt;Select Utility Value:&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="radio" id="None8" name="utilityValue8" value="None" required checked&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;label for="None8"&gt;None&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="radio" id="Low8" name="utilityValue8" value="Low" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;label for="Low8"&gt;Low&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="radio" id="Medium8" name="utilityValue8" value="Medium" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;label for="Medium8"&gt;Medium&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="radio" id="High8" name="utilityValue8" value="High" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;label for="High8"&gt;High&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="explanationInput8" class="explanationInput" style="display: none;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;Explanation (optional):&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;crowd-text-area id="explanation8" name="explanation8" rows="4" placeholder="Your explanation here..."&gt;&lt;/crowd-text-area&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Aspect 9 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="aspect9" style="display: none;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h4&gt;Review:&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;${review9}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="utility9" style="display: none;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h4&gt;Select Utility Value:&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="radio" id="None9" name="utilityValue9" value="None" required checked&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;label for="None9"&gt;None&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="radio" id="Low9" name="utilityValue9" value="Low" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;label for="Low9"&gt;Low&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="radio" id="Medium9" name="utilityValue9" value="Medium" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;label for="Medium9"&gt;Medium&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="radio" id="High9" name="utilityValue9" value="High" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;label for="High9"&gt;High&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="explanationInput9" class="explanationInput" style="display: none;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;Explanation (optional):&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;crowd-text-area id="explanation9" name="explanation9" rows="4" placeholder="Your explanation here..."&gt;&lt;/crowd-text-area&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Aspect 10 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="aspect10" style="display: none;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h4&gt;Review:&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;${review10}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="utility10" style="display: none;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h4&gt;Select Utility Value:&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="radio" id="None10" name="utilityValue10" value="None" required checked&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;label for="None10"&gt;None&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="radio" id="Low10" name="utilityValue10" value="Low" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;label for="Low10"&gt;Low&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="radio" id="Medium10" name="utilityValue10" value="Medium" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;label for="Medium10"&gt;Medium&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="radio" id="High10" name="utilityValue10" value="High" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;label for="High10"&gt;High&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="explanationInput10" class="explanationInput" style="display: none;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;Explanation (optional):&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;crowd-text-area id="explanation10" name="explanation10" rows="4" placeholder="Your explanation here..."&gt;&lt;/crowd-text-area&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Aspect 11 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="aspect11" style="display: none;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h4&gt;Review:&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;${review11}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="utility11" style="display: none;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h4&gt;Select Utility Value:&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="radio" id="None11" name="utilityValue11" value="None" required checked&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;label for="None11"&gt;None&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="radio" id="Low11" name="utilityValue11" value="Low" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;label for="Low11"&gt;Low&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="radio" id="Medium11" name="utilityValue11" value="Medium" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;label for="Medium11"&gt;Medium&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="radio" id="High11" name="utilityValue11" value="High" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;label for="High11"&gt;High&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="explanationInput11" class="explanationInput" style="display: none;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;Explanation (optional):&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;crowd-text-area id="explanation11" name="explanation11" rows="4" placeholder="Your explanation here..."&gt;&lt;/crowd-text-area&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Aspect 12 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="aspect12" style="display: none;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h4&gt;Review:&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;${review12}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="utility12" style="display: none;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h4&gt;Select Utility Value:&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="radio" id="None12" name="utilityValue12" value="None" required checked&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;label for="None12"&gt;None&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="radio" id="Low12" name="utilityValue12" value="Low" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;label for="Low12"&gt;Low&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="radio" id="Medium12" name="utilityValue12" value="Medium" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;label for="Medium12"&gt;Medium&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="radio" id="High12" name="utilityValue12" value="High" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;label for="High12"&gt;High&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="explanationInput12" class="explanationInput" style="display: none;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;Explanation (optional):&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;crowd-text-area id="explanation12" name="explanation12" rows="4" placeholder="Your explanation here..."&gt;&lt;/crowd-text-area&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Navigation Buttons --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="navigation-buttons"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;crowd-button id="prevButton" onclick="toggleAspect('prev', parseInt(document.getElementById('maxAspects').value))" disabled&gt;Prev Aspect&lt;/crowd-button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;crowd-button id="nextButton" onclick="toggleAspect('next', parseInt(document.getElementById('maxAspects').value))"&gt;Next Aspect&lt;/crowd-button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Hidden Inputs --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;input type="hidden" id="currentAspect" name="currentAspect" value="1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;input type="hidden" id="maxAspects" name="maxAspects" value="12"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Custom Submit Button --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;button id="customSubmitButton" disabled&gt;Submit&lt;/button&gt;</p>
+<p class="p1">&lt;/crowd-form&gt;</p>
+</body>
+</html>
