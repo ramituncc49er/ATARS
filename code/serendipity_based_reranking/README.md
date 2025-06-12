@@ -12,7 +12,5 @@ User-dependant Serendipity of an item (restaurant, hotel or hair salon) is defin
 
 Assuming a normalized aspect to aspect similarity measure $sim(a, \hat{a}) \in [0,1]$, with a value of 1 if and only if $\hat{a} = a$, this means that:
 
-\begin{equation}
-    serendipity(u, i) = \sum_{a \in AtA(i)} \frac{utility(u, a)}{\displaystyle\sum_{\hat{a} \in AtA(i)} sim(a, \hat{a})}
-    \label{eq:serendipity}
-\end{equation}
+
+    $serendipity(u, i) = \sum_{a \in AtA(i)} \frac{utility(u, a)}{\displaystyle\sum_{\hat{a} \in AtA(i)} sim(a, \hat{a})}$
