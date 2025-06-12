@@ -8,5 +8,5 @@ This repository contains the source code and datasets for Atypical Aspect-Based 
   <img src="figs/atars_interaction.png" height="250">
 </p>
 
-Example interaction with the proposed recommender system, where items with atypical aspects relevant to the user are promoted at the top of the ranking (before), in order to engineer a serendipitous experience (after).
+Hypothetical interaction with the proposed recommender system, where items with atypical aspects relevant to the user are promoted at the top of the ranking (before), in order to engineer a serendipitous experience (after).
 
