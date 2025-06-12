@@ -1,0 +1,55 @@
+Example 1:
+
+The B&B is located near the departure points for Trolley tours and Land Shark tours
+
+Classification: <pos>
+Atypical Aspects: Trolley tours, Land Shark tour
+
+Example 2:
+
+The hotel provides a free shuttle service to local sites
+
+Classification: <pos>
+Atypical Aspects: free shuttle
+
+Example 3:
+
+The hotel offers activities for kids, including cookie baking, bingo, hula hoop contests, and Simon says
+
+Classification: <pos>
+Atypical Aspects: activities, cookie baking, bingo, hula hoop contests, Simon says
+
+Example 4:
+
+The hotel grounds feature a koi pond with a water feature, a tortoise rescue, a butterfly garden, and a trail leading to a natural waterfall
+
+Classification: <pos>
+Atypical Aspects: koi pond with water feature, tortoise rescue, butterfly garden, trail, natural waterfall
+
+Example 5:
+
+The front desk staff is friendly, helpful, and polite
+
+Classification: <neg>
+Atypical Aspects: <None>
+
+Example 6:
+
+The B&B has ample parking, especially during off-peak seasons
+
+Classification: <neg>
+Atypical Aspects: <None>
+
+Example 7:
+
+The hotel appears to have undergone recent renovations, with comfortable beds, freshly painted walls, and new carpeting
+
+Classification: <neg>
+Atypical Aspects: <None>
+
+Example 8:
+
+The hotel beds are full-sized, not queen-sized
+
+Classification: <neg>
+Atypical Aspects: <None>

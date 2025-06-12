@@ -1,0 +1,15 @@
+Write a brief and focused biography for an individual that contains a combination of personal attributes such as personal or family history, social connections, educational and professional background, hobbies, passions, lifestyle needs, accessibility needs, and significant recent life events.
+
+Your responses must be all in one paragraph and written in plain, unembellished language.
+
+You will be given a topic or a comma-separated list of topics that is within angle brackets. 
+
+The biography must coherently integrate the list of topics, explicitly as given, or implicitly through related concepts, or both, into its narrative, aligning them with the individual’s hobbies, passions, lifestyle needs, or accessibility needs. In other words, by reading the biography, one should be able to infer that the individuals would find the topic interesting, appealing, or useful to them. It’s important to note that some topics may be more effectively presented as hobbies or passions, while others might be better portrayed as objects or services that facilitate a particular lifestyle or meet accessibility needs.
+
+A given topic may be expressed in the biography narrative as given, through a more general category, e.g., if the given topic is ’live indie music’, it can be broadened to ’live music’, or through a more specific category, e.g., if the given topic is ’pets’, it can be narrowed to ’dogs’. If there are multiple topics with similar themes, we can express those through a more general category, e.g., if given topics are ’life size beer pong, pool table, shuffleboard’, it can be broadened to ’indoor games’ or express it through a specific category, e.g., if given topics are ’watercolors, local artist, liberal arts camp’, it can be narrowed to ’portrait painting’.
+
+For example:
+
+{few_shot_examples}
+
+Now, using the instructions and examples above, generate a user profile for the topics

@@ -1,0 +1,55 @@
+Example 1:
+
+The salon also sells costume jewelry, handbags, and scarves
+
+Classification: <pos>
+Atypical Aspects: costume jewelry, handbags, scarves
+
+Example 2:
+
+The salon chairs are themed with popular children's characters and vehicles like Thomas, Disney princess, and fire truck
+
+Classification: <pos>
+Atypical Aspects: Thomas, Disney princess, fire truck
+
+Example 3:
+
+Each station is equipped with a smart TV where children can watch their favorite shows on Netflix, Youtube, etc
+
+Classification: <pos>
+Atypical Aspects: smart TV, their favorite show, Netflix, Youtube
+
+Example 4:
+
+The salon provides makeovers, including haircuts, manicures, pedicures, and makeup, for patients in hospitals
+
+Classification: <pos>
+Atypical Aspects: manicures, pedicures, makeup
+
+Example 5:
+
+The salon is housed in a stucco building and has been recognized as one of the top 200 fastest growing salons in the USA by Salon Today magazine
+
+Classification: <neg>
+Atypical Aspects: <None>
+
+Example 6:
+
+The salon staff, including Lisa and Kathy, are professional and attentive to customer needs
+
+Classification: <neg>
+Atypical Aspects: <None>
+
+Example 7:
+
+The salon offers discounts through Groupon Now
+
+Classification: <neg>
+Atypical Aspects: <None>
+
+Example 8:
+
+The salon staff provide personalized consultations to understand the customer's style and preferences
+
+Classification: <neg>
+Atypical Aspects: <None>

@@ -1,0 +1,49 @@
+Example 1:
+
+U: Simone is a devoted single mom living in Orlando, Florida, with her 6-year-old daughter Mia. Their home is a testament to their shared love for Disney princesses, with each room sprinkled with themed decorations that spark imagination and joy. Simone's passion for bringing fairy tales to life goes beyond her doorstep; she actively participates in charitable activities within her community. As an avid crafter, she combines her knack for creativity with philanthropy by making blankets for local animal shelters. This activity not only allows her to help animals in need but also serves as valuable teaching moments for Mia about kindness and giving back. During weekends, Simone and Mia often volunteer at these shelters, turning each visit into a heartwarming adventure of compassion and care. 
+
+R: The hair salon has <ata>play activities</ata> in the waiting area.
+
+Output:
+
+A' = ("play activities", "Low")
+		
+Explanation = play activities: Assigned a relevance label of "Low". Reasoning: Let's think step by step, Simone engages in activities with her daughter that bring joy and imagination. While play activities are not directly related to Simone's main interests, they could be somewhat appealing as they might entertain Mia. Thus, it is labeled as Low. Guideline Applied: "The attractor and the atypical aspect are distinct and specific concepts with only a small degree of conceptual similarity between them."
+
+
+Example 2:
+
+U: Mia is a graphic designer from Honolulu, Hawaii, where she runs her freelance business. She grew up near the beach and developed a passion for surfing early on, incorporating it into her daily routine. Before starting work each day, Mia enjoys catching the morning waves, which helps clear her mind and often inspires her designs. Surfing keeps her physically active and mentally sharp, essential for tackling her creative projects. Mia also participates in local initiatives to protect marine life and enjoys guiding young designers and surfers by sharing practical tips on design and surfing fundamentals.
+
+R: The hair salon makes <ata>hair donations</ata> to soak up the oil spills. 
+
+Output:
+
+A' = ("hair donations", "Medium")
+		
+Explanation = hair donations: Assigned a relevance label of "Medium". Reasoning: Let's think step by step, Mia participates in local initiatives to protect marine life and is involved in community activities. Hair donations to soak up oil spills have some relevance to her passion for environmental conservation, as it could be considered a specific activity within the broad concept of environmental conservation. Thus, it is labeled as Medium. Guideline Applied: "The attractor is a broad concept, while the atypical aspect is a more specific concept subsumed by that broad concept."
+
+
+Example 3:
+        
+U: Jessica, a devoted mother and passionate advocate for animal welfare, resides in the vibrant community of Boulder, Colorado. Working as a high school guidance counselor, she dedicates her time to nurturing young minds and actively participates in local charity events focused on supporting both people and animals in need. Jessica is always on the lookout for businesses that align with her values, especially those that offer meaningful experiences for her family while contributing positively to the community. She particularly treasures places where around the holidays they run specials actions that teach compassion and kindness to her children. Additionally, Jessica values self-care and enjoys pampering sessions such as waxing that understand the importance of 'me time' amidst a busy lifestyle.
+
+R: The salon runs specials around the holidays, such as offering a discount for bringing in a <ata>bag of dog food</ata> or blankets for local shelters.
+
+Output:
+          
+A' = ("bag of dog food", "High")
+
+Explanation =  bag of dog food: Assigned a relevance label of "High". Reasoning: Let's think step by step, Jessica is a passionate advocate for animal welfare and actively participates in charity events supporting animals in need. Bringing a bag of dog food to support local shelters aligns closely with her values. Thus, it is labeled as High. Guideline Applied: "The atypical aspect closely matches an attractor in the user profile. Both the attractor and the atypical aspect must involve the same specific context."
+
+Example 4:
+        
+U: Jessica, a devoted mother and passionate advocate for animal welfare, resides in the vibrant community of Boulder, Colorado. Working as a high school guidance counselor, she dedicates her time to nurturing young minds and actively participates in local charity events focused on supporting both people and animals in need. Jessica is always on the lookout for businesses that align with her values, especially those that offer meaningful experiences for her family while contributing positively to the community. She particularly treasures places where around the holidays they run specials actions that teach compassion and kindness to her children. Additionally, Jessica values self-care and enjoys pampering sessions such as waxing that understand the importance of 'me time' amidst a busy lifestyle.
+
+R: The decor of the salon is simple and pretty, featuring <ata>Craftsman tool boxes</ata> that serve as beauty tool boxes.
+
+Output:
+          
+A' = ("Craftsman tool boxes", "None")
+
+Explanation = Craftsman tool boxes: Assigned a relevance label of "None". Reasoning: Let's think step by step, while the use of Craftsman tool boxes as beauty tool boxes is a unique aspect, it does not align with Jessica's interests in family experiences, animal welfare, or self-care. Thus, it is labeled as None. Guideline Applied: "The atypical aspect lacks any relevance to the attractors in the user profile."

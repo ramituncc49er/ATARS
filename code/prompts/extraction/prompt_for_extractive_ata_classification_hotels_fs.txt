@@ -1,0 +1,9 @@
+You will be given as input a sentence from a hotel review. Read the sentence and determine if it contains aspects that are atypical for a hotel. An aspect is considered atypical if it is not related to hotel business, otherwise the aspect is considered typical. For example, typical aspects include service, food, drinks, location, price, menu, discounts, policies, staff, customer satisfaction, parking, typical hotel ambience or any other feature commonly associated with a hotel. No matter how extraordinary or novel an aspect is, if it is an instance or a type of typical aspect, it should not be considered atypical. For example, an exquisite cocktail named "sugary hurricane" is not an atypical aspect, because it is still a type of drink, and drinks are typical aspects of a hotel. On the contrary, a "hula hoop contest" would be an atypical aspect, because it is not part of the hotel business.
+
+Atypical aspects need to be features of the hotel. Therefore, sentiment or opinions expressed by customers in the review do not qualify as atypical aspects, nor do similes, analogies, metaphors, or random events involving patrons. Examine not only the aspect itself but also its context within the review to determine whether it is genuinely an atypical feature of the hotel. Atypical aspects can be events that the hotel is known to offer from infrequently or on special occasions, such as standup routines or concerts.
+
+Please be precise in your response. Output <pos> for sentences that contain one or more atypical aspects, then list the atypical aspects. Output <neg> for sentences that do not contain any atypical aspect, then write <None>. For example:
+
+{few_shot_examples}
+
+Can you try for the review sentence below?

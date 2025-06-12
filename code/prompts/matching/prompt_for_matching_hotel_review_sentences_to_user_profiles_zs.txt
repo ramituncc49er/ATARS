@@ -1,0 +1,33 @@
+You will be given a user profile U and a hotel review sentence R as input.
+
+First, you will read the profile U to identify objects or activities that the user finds interesting, appealing, or useful, henceforth referred to as 'attractors.' These typically relate to the user’s hobbies, passions, or lifestyle.
+
+Next, you will read the hotel review sentence R, which mentions an aspect A that is atypical for a hotel. An atypical aspect is marked between the tags <ata> and </ata> in the text of the review. Determine if the atypical aspect would be interesting, appealing, or useful to the user based on the profile U, i.e., whether the atypical aspect is relevant to the attractors identified in the user profile, by examining not only the atypical aspect itself but also its context within R and the context of the attractors in U. Ensure that you read the entire sentence that mentions the atypical aspect. For an atypical aspect, estimate its relevance as 'None,' 'Low,' 'Medium,' or 'High' as follows:
+
+- None is assigned to an atypical aspect in any of the cases below:
+1. The atypical aspect lacks any relevance to the attractors in the user profile.
+2. The atypical aspect, despite appearing relevant, is too specific for the user’s very broad interests or hobbies in the profile. For example, an atypical aspect such as live music, is too specific for the very broad attractor creating a playful and family-friendly environment, as such its utility should be annotated as None.
+3. The atypical aspect involves materials or items that, despite appearing relevant, belong to a completely different context or are used for a completely different purpose than those in the user profile. For example, if in the review sentence the atypical aspect of high-end look pertains to architecture or interior design, whereas the attractor strives to achieve a high-end look in the user profile is about fashion choices, the utility of the atypical aspect should be annotated as None. Similarly, if according to the profile a user is interested in modern plastic furniture for home design, this does not necessarily translate to an interest in all plastic items. Therefore, the utility of an atypical aspect like plastic ponchos that are sold by a hotel should be annotated as None.
+
+- Low is assigned to an atypical aspect in any of the cases below:
+1. The attractor and the atypical aspect are distinct and specific concepts with only a small degree of conceptual similarity between them. For example, if a user is passionate about surfing, the utility of an atypical aspect such as a sand sculpture or a swimming pool should be annotated as Low, as they have only a small degree of conceptual similarity to surfing.
+2. The attractor and the atypical aspect are very broad concepts with a very limited conceptual overlap. For example, if a user has a general interest in visual aesthetics, which can include photography, painting, and architectural design, but the atypical aspect is art, which can include handicrafts, paintings, and sculptures, then even though there is some overlap between these two very broad concepts, the overlap is small, as such the utility of the atypical aspect should be annotated as Low.
+
+- Medium is assigned to an atypical aspect in any of the cases below:
+1. The attractor is a broad concept, while the atypical aspect is a more specific concept subsumed by that broad concept. For example, if a user is passionate about a broad topic such as interior design, an atypical aspect like a lime green counter would have Medium utility, as it may be very appealing to the user.
+2. Conversely, the attractor is a specific concept that is subsumed by the broader atypical aspect. For example, if a user enjoys listening to live pop music performances, they might also be interested in listening to any music in general, hence the atypical aspect music would have Medium utility for the user.
+
+- High is assigned to an atypical aspect if:
+1. The atypical aspect closely matches an attractor in the user profile. Both the attractor and the atypical aspect must involve the same specific context. For example, if the highlight of a user's year is seeing the Fourth of July fireworks display over the ocean, then a hotel that offers a vantage point over the ocean for watching fireworks would have High utility. In this example, it was important that the fireworks happen in the same context, i.e. over the ocean.
+
+Process: To ensure accuracy in your relevance estimation, draw correlations conservatively and avoid drawing connections between attractors and atypical aspects that are not explicitly related. Cross-reference each relevance decision with the explicit guidelines provided, verifying that the chosen label adheres to the rules and is contextually appropriate concerning the atypical aspect in R and the attractors in U. Include the guideline applied verbatim in the explanation.
+
+The output should list the atypical aspect that you label with a 'None,' 'Low,' 'Medium,' or 'High' relevance value, together with an explanation, using the format below:
+
+A' = [("<atypical aspect>", "<label>")]
+
+Explanation: Provide a detailed explanation for the 'None,' 'Low,' 'Medium,' or 'High' relevance labels you assigned to the atypical aspects listed above and how you used the 'Process' to validate the label.
+
+Please be precise in your response and strictly follow the format given.
+
+Now, read the user profile U and the hotel review sentence R with the tagged the atypical aspect below, and assign its relevance value, as explained earlier.

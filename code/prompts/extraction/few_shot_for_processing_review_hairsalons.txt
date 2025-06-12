@@ -1,0 +1,20 @@
+Example 1:
+
+Cookie Cutters is perfect for kids and especially those with sensory issues. There are play activities in the waiting area. The chairs are all themed like Thomas, Disney princess, fire truck, etc. Each station has a smart TV so kids can pick out their favorite show on Netflix, Youtube, etc. The best part about the chairs is that the kids sit deep in there and get buckled in so that they can't kick anybody or anything. My only real issues have been that they tend to run late on appointments which can get the kids agitated and the open ceiling and flat walls make it an echo chamber. I don't think the kids mind but it is even louder than you would expect in a building of screaming kids. The hair cutting has been good each time and the price isn't terrible for what you are getting.
+
+Output: Cookie Cutters is perfect for kids and especially those with sensory issues. The hair salon has play activities in the waiting area. The chairs in the hair salon are all themed like Thomas, Disney princess, fire truck, etc. The hair salon has a smart TV at each station so kids can pick out their favorite show on Netflix, Youtube, etc. The kids can sit deep in the chairs and get buckled in so that they can't kick anybody or anything. The hair salon can run late on appointments which can get the kids agitated and the open ceiling and flat walls make it an echo chamber. 
+
+
+Example 2:
+
+One of the nicest salons I have ever been to. I loved the interior design and the wide selection of refreshments. The pricing was very fair got what I received. This is the best haircut I have had in a very long time. If also helps that is walking distance from my apartment, and they were also hosting a blanket drive, and I love when businesses are involved in the local community. There are two reasons this isn't a five star review: first, the online system on which you book appointments is clunky and often doesn't load correctly. I wasn't sure if my appointment was confirmed until the next day. Secondly, my appointment started almost half an hour late, making my haircut take much longer than normal.
+
+Output: The hair salon is one of the nicest salons. They have a lovely interior design and a wide selection of refreshments. The pricing at the hair salon is very fair given what one receives. They also host blanket drives, demonstrating their involvement in the local community. There are two reasons this isn't a five star review: first, the online system on which you book appointments is clunky and often doesn't load correctly. The customer might not be sure if the appointment was confirmed until the next day. Secondly, appointments can start almost half an hour late, making the haircut take much longer than normal.
+
+
+Example 3:
+
+The salon is a recent addition to the Duross and Langel shop and they were smart enough to bring in my favorite stylist of all time, Rene. In May I decided to change my look with white-blonde hair instead of the usual highlights. Rene did an awesome job with the cut (as usual) and color. I got it touched up recently and it came out even better. The owners are lovely and host industry/customer appreciation nights where there is free yoga and they cook us dinner. The space is beautiful, the prices are very reasonable for center city and the products are great. Highly recommended.
+
+Output: The salon is a recent addition to the Duross and Langel shop and one of the stylist is Rene. Rene does an awesome job with the cut and color. The owners are lovely and host industry/customer appreciation nights where there is free yoga and they cook dinner. The space is beautiful, the prices are very reasonable for center city and the products are great. Highly recommended.
+

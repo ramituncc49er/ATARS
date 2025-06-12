@@ -1,0 +1,7 @@
+You will be given a hair salon review. Read the provided review thoroughly and generate a list of sentences that only talk about features or properties of the hair salon. You can remove redundant statements and opinions as long as the generated list of sentences is comprehensive in that it should include all the hair salon features that were mentioned in the original review. The generated sentences should stay as close as possible to the sentences in the original review.
+
+For example:
+
+{few_shot_examples}
+
+Now, read and process the review: {review}

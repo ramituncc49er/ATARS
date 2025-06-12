@@ -1,0 +1,55 @@
+Example 1:
+
+The restaurant features a long hallway leading to a garden, adorned with numerous pieces of art
+
+Classification: <pos>
+Atypical Aspects: garden, art
+
+Example 2:
+
+The restaurant also has a gift shop with reasonably priced items, including cute wallets, shawls and necklaces
+
+Classification: <pos>
+Atypical Aspects: gift shop, cute wallets, shawls, necklaces
+
+Example 3:
+
+The restaurant, Fat Straw, has a futuristic style with a lime green counter, shiny plastic furniture, and stained concrete floors
+
+Classification: <pos>
+Atypical Aspects: lime green counter, shiny plastic furniture, stained concrete floors
+
+Example 4:
+
+It features a wall of polaroids of customers, which adds a personal touch to the decor of geometric shapes and synthetic materials
+
+Classification: <pos>
+Atypical Aspects: polaroids, geometric shapes, synthetic materials
+
+Example 5:
+
+The restaurant is located at Edgehill Village
+
+Classification: <neg>
+Atypical Aspects: <None>
+
+Example 6:
+
+The prices are standard, with a 16oz bubble tea priced at $3.50
+
+Classification: <neg>
+Atypical Aspects: <None>
+
+Example 7:
+
+The restaurant offers a variety of bubble tea flavors, including red bean, honeydew, lychee, pomegranate, ginger, elvis (banana + peanut butter), and sesame
+
+Classification: <neg>
+Atypical Aspects: <None>
+
+Example 8:
+
+The restaurant has a colorful ambiance, with cups for frozen drinks that change colors
+
+Classification: <neg>
+Atypical Aspects: <None>

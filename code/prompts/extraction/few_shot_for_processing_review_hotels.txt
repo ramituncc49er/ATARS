@@ -1,0 +1,20 @@
+Example 1:
+
+This boutique is very cute and quite a steal for the price. They give you water when you check in which is an added bonus. The lobby is very chic and the decor is 5 stars. The room was clean and very nice well worth the price. The best is that they have a free shuttle to take you to all of the local sites. They also have a beautiful resort style pool. The only cons were the free parking is great but the lot gets crowded which can be difficult to find a spot. Secondly they have a coffee pot in the room but dont offer tea or decaf. Everything thing else makes this a 4 star hotel at a 3 star price.
+
+Output: This boutique is very cute and quite a steal for the price. They give you water when you check in. The lobby is very chic and the decor is 5 stars. The room was clean and very nice. The hotel has a free shuttle to take you to all of the local sites. The hotel also has a beautiful resort style pool. The hotel offers free parking but the lot gets crowded which can make it difficult to find a spot. They have a coffee pot in the room but dont offer tea or decaf. Everything thing else makes this a 4 star hotel at a 3 star price.
+
+
+Example 2:
+
+The views are beautiful. Room has no microwave. Bathroom has no fan. Grill by pool closes at 6 so good luck feeding a picky kid. 
+The activities for the kids are great. Cookie baking, bingo, hula hoop contest, and simon says. Pool is nice but the pool with the slide needs to be much deeper. Staff is. Just personal preference. Food is way overpriced and equivalent to street fair quality.
+
+Output: The views from the hotel are beautiful. Room has no microwave. Bathroom has no fan. Grill by pool closes at 6. The activities for the kids in the hotel are great. The activities for the kids in the hotel include Cookie baking, bingo, hula hoop contest, and simon says. The pool is nice. Staff is . Just personal preference. Food is way overpriced.
+
+
+Example 3:
+
+Hidden gem! What a glorious property! Very reasonable for what you get , made to order organic breakfast, nice pool and a veranda to check out the butterfly garden. The staff was friendly and accommodating and it's close to everything! Would definitely stay here again!
+
+Output: The hotel is very reasonable priced for what you get. They have made to order organic breakfast, nice pool and a veranda to check out the butterfly garden. The staff was friendly and accommodating and it's close to everything!

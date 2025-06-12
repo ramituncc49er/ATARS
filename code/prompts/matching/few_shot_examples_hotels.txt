@@ -1,0 +1,50 @@
+Example 1:
+
+U: Sara is an elementary school teacher in the small, vibrant town of Maplewood, nestled in the lush valleys of Northern California. Growing up in a family that placed a strong emphasis on community engagement and healthy living, Sara naturally gravitated toward activities that reflect these values. She spends most of her Saturday mornings browsing through local produce at the farmer's market, where she also participates in various community events. One event close to her heart is the annual hula hoop contest hosted right there at the market. This passion not only allows her to connect deeper with her roots but also brings a unique element to her teaching style, as she often incorporates lessons on nutrition and physical wellness into her curriculum. Additionally, Sara uses these experiences to foster a sense of community and teamwork among her students by organizing mini contests and group activities.
+
+R: At night, the hotel transforms into a lively social scene with <ata>live music</ata> and dancing.
+
+Output:
+
+A' = ("live music", "Low")
+		
+Explanation = live music: Assigned a relevance label of "Low". Reasoning: Let's think step by step, live music might have a small degree of conceptual similarity to Sara's interests in community engagement and healthy living. While music can be part of community events, it is not explicitly related to her specific interests or activities. Therefore it is labeled as Low. Guideline applied: "The attractor and the atypical aspect are distinct and specific concepts with only a small degree of conceptual similarity between them."
+
+
+Example 2:
+
+U: Lena Thomas is a retired school teacher residing in the bustling heart of Orlando, Florida. After retirement, Lena channelled her lifelong passion for nature into creating a butterfly garden at her home. This project not only reflects her commitment to environmental conservation but also provides a sanctuary where she can immerse herself in the nature. Lena's childhood by the beach instilled in her a love for the ocean; however, residing inland, she makes it a point to regularly visit the ocean. Her trips are less about sunbathing on sandy beaches and more focused on experiencing the majesty of the sea from scenic overlooks or participating in guided marine tours.
+
+R: The location of the hotel is great, half a block from the beach and an easy walk to State St. and <ata>Trolley tours</ata> and Land Shark tour leave from less than a block away.
+
+Output:
+
+A' = ("Trolley tours", "Medium")
+		
+Explanation = Trolley tours: Assigned a relevance label of "Medium". Reasoning: Let's think step by step, trolley tours may provide scenic views and information about the local area, which could interest Lena due to her appreciation for nature and scenic overlooks. Thus it is labeled with Medium annotation. Guideline applied: "The attractor is a broad concept, while the atypical aspect is a more specific concept subsumed by that broad concept."
+
+
+Example 3:
+        
+U: Lena Thomas is a retired school teacher residing in the bustling heart of Orlando, Florida. After retirement, Lena channelled her lifelong passion for nature into creating a butterfly garden at her home. This project not only reflects her commitment to environmental conservation but also provides a sanctuary where she can immerse herself in the nature. Lena's childhood by the beach instilled in her a love for the ocean; however, residing inland, she makes it a point to regularly visit the ocean. Her trips are less about sunbathing on sandy beaches and more focused on experiencing the majesty of the sea from scenic overlooks or participating in guided marine tours.
+
+R: The hotel has a nice pool and a veranda to check out the <ata>butterfly garden</ata>.
+
+Output:
+          
+A' = ("butterfly garden", "High")
+
+Explanation =  butterfly garden: Assigned a relevance label of "High". Reasoning: Let's think step by step, Lena has a lifelong passion for nature, which she channels into creating and maintaining a butterfly garden at her home. A butterfly garden at the hotel aligns perfectly with her interests in environmental conservation and nature, making it highly relevant to her. Therefore, it is labeled as High. Guideline applied: "The atypical aspect closely matches an attractor in the user profile. Both the attractor and the atypical aspect must involve the same specific context."
+
+
+Example 4:
+        
+U: Amelia, a marine biologist based in Key West, Florida, has always been fascinated by the natural world. With her work focused on wildlife conservation, she spends much of her time researching and advocating for the protection of sea and bird species. Her home reflects her interests with simple decor inspired by the ocean and tropical forests. Outside work, Amelia enjoys volunteering at local animal rescue centers and giving talks at schools to educate children about environmental preservation. She’s an avid kayaker, often spending weekends on the water where she feels closest to nature. Through social media, she shares tips on how individuals can help protect endangered habitats in their daily lives.
+
+R: There is a <ata>pianist</ata> in the lobby of the hotel.
+
+Output:
+          
+A' = ("Pianist", "None")
+
+Explanation = Pianist: Assigned a relevance label of "None". Reasoning: Let's think step by step, a pianist in the lobby is a form of entertainment that does not connect with Amelia's specific interests in nature, wildlife conservation, or marine biology. Therefore it is labeled as None. Guideline applied: "The atypical aspect lacks any relevance to the attractors in the user profile."
