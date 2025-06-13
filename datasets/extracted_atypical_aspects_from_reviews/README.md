@@ -1,5 +1,7 @@
 # Dataset
 
+The datasets for manually annotated atypical aspects for restaurant, hotel, and hair salon domains available in this directory. The table below shows details of the columns in the dataset.
+
 | Column                    | Description                                                                 |
 |---------------------------|-----------------------------------------------------------------------------|
 | name                      | Business name of the item.                                                  |
