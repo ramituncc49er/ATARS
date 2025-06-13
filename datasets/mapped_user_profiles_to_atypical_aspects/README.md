@@ -1,6 +1,6 @@
 # Dataset
 
-The datasets for crowdsourced annotations of user-aspect utility values for restaurant, hotel, and hair salon domains, available in this directory. The table below shows details of the columns in the dataset.
+The datasets for crowdsourced annotations of user-aspect utility values for restaurant, hotel, and hair salon domains, available in this directory. The table below shows details of the columns in the datasets.
 
 | Column                      | Description                                                                                   |
 |-----------------------------|-----------------------------------------------------------------------------------------------|
